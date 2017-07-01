@@ -14,6 +14,7 @@ var getListOfContents = (function(){
     mobile: function(){
       var t2 = t.slice();
       t2.splice(-1, 0, {text:'Twitter', slag: 'twitter'});
+      t2.splice(-1, 0, {text:'Youtube', slag: 'youtube'});
       t2.splice(-1, 0, {text:'Soundcloud', slag: 'soundcloud'});
       return t2;
     },
