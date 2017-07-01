@@ -16,4 +16,4 @@ pipelines:
           - apt-get -qq install git-ftp
           - echo "Initiating Push"
           - git ftp init --user ykpyftp --passwd winterwait22 ftp://160.16.78.67/
-          - echo "Done Pushing"
+          - echo "Done Pushing "
