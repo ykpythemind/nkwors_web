@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>猫を堕ろす Website</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="./css/normalize.css" rel="stylesheet"/>
+  <link href="./css/style.css" rel="stylesheet"/>
+  <link href="./css/remodal.css" rel="stylesheet"/>
+  <link href="./css/remodal-default-theme.css" rel="stylesheet"/>
+  <script src="./js/jquery-1.11.2.min.js"></script>
+  <script src="./js/vue.min.js"></script>
+  <script src="./data.js"></script>
+  <script src="./js/remodal.js"></script>
+  <script src="./js/jquery.easing.1.3.js"></script>
+  <script src="./js/script.js"></script>
+  <!--[if IE]>
+    <script type="text/javascript">
+    $(function(){
+    $("#container").css("display","none"); $("#ie_show").css("display","block");
+    });
+    </script>
+  <![endif]-->
+</head>
+<body>
+<div id="app">
+  <!-- ======= CONTAINER ======= -->
+  <div id="container">
+  <!-- ========================= -->
+
+    <!-- ======= HEADER ======= -->
+    <header>
+    <!-- ====================== -->
+      <div id="acord">
+        <div id="acordtop" v-bind:class="{active: isActive}" v-on:click="touch">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="acordin">
+        <ul>
+          <li v-for="list in listsMobile">
+            <a v-bind:href="'#' + list.slag" v-on:click.prevent="listclick(list.slag)">{{ list.text }}</a>
+          </li>
+        </ul>
+      </div>
+      <div id="headerinner">
+        <div id="logo"><img src="./img/nklogo_web_n.png" alt="猫を堕ろす logo"></div>
+        <div id="menuouter">
+          <ul>
+            <li v-for="list in lists" class="menusback">
+              <a v-bind:href="'#' + list.slag" v-on:click.prevent="listclick(list.slag)">{{ list.text }}</a>
+            </li>
+            <li style="margin-left:auto; margin-top:-10px;" id="icon">
+              <div id="social-icon">
+                <a href="https://twitter.com/nkwors" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://soundcloud.com/nkwors" target="_blank"><i class="fa fa-soundcloud"></i></a>
+                <a href="https://www.instagram.com/ykpythemind/" target="_blank"><i class="fa fa-instagram"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <!-- ====== END OF HEADER ==== -->
+    </header>
+    <!-- ========================= -->
+
+    <!-- ========= MAIN ========== -->
+    <div id="main">
+    <!-- ========================= -->
+      <!-- ====BIO==== -->
+      <div class="remodal" data-remodal-id="bio" data-remodal-options="hashTracking:false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <h2>Biography</h2>
+        <h3>猫を堕ろす</h3>
+        <center><a href="./img/bg_original.jpg"><img src="./img/bg_pc.jpg" data-original="./img/bg_pc.jpg" style="width:100%; height:auto; max-width:700px;" class="imgborder"></a></center>
+        <p>[L→R]</p>
+        <ul id="person">
+          <li v-for="person in persons">
+            {{person.name}} <a v-bind:href="'https://twitter.com/'+person.id_twit" v-show="person.id_twit" target="_blank">Twitter <i class="fa fa-twitter" v-show="person.id_twit"></i></a>
+          </li>
+        </ul>
+        <p><b>【CUTEでDOPE】</b><br>2013年 名大フォークソング同好会にて結成。<br>
+          名古屋の奇才・イトウユキト率いるシニカル・ポップバンド。<br>
+        2016年にはボーカルにイカリヤマナツを迎え、精力的に活動を続けている。2016年RO69JACK入賞。</p>
+
+        <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
+      </div>
+      <!-- ====END OF BIO==== -->
+
+      <!-- ======= DISCO ======= -->
+      <div class="remodal" data-remodal-id="disco" data-remodal-options="hashTracking:false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <h2>Discography</h2>
+
+        <center><a href="https://soundcloud.com/nkwors" target="_blank" class="sc_link"><i class="fa fa-soundcloud"></i> Soundcloud</a></center>
+
+        <h3>1st album &quot;The Cats Are Alright&quot;</h3>
+        <center><img src="img/the_cats_are_jacket.jpg" style="width:80%; max-width:300px; height:auto;" class="imgborder"><br>
+1. The Cats Are Alright / 2. 恋する猫は淑女の気持ち / 3. 日傘のリーズ / 4. 舌足らず / 5. ティータイムは報われない / 6. N.K.W.O.R.S  <br><br>[BSMR003] 1000yen (tax in)<br><small>2017/5/7 Release</small></center>
+
+        <p>2013年、名古屋で結成された男女ツインボーカル編成のシニカルポップバンド、猫を堕ろす待望の公式初音源。
+          コンポーザー伊藤薫人が生み出すパワーポップ、オルタナなどに影響を受けた楽しくも少し捻くれたポップスを6曲収録。
+          時にシニカルに、時にキュートに、時にエモーショナルにと表情を変え続ける楽曲は癖になること間違いなし。</p>
+        <p>購入はタワーレコード名古屋パルコ店またはCafe＆bar drawingにて！<small>（通販も致します。コンタクトフォームからどうぞ。）</small></p>
+
+        <h3>無料配信音源「恋する猫は淑女の気持ち」</h3>
+        <img src="img/shukujo_jacket_min.jpg" style="max-width:300px;"><br>
+        2016/5/28 Release | <a href="shukujo/index.html">特設ページ</a>
+
+        <br>
+        <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
+
+      </div>
+      <!-- ====END OF DISCO==== -->
+
+      <!-- ======= LIVE ======= -->
+      <div class="remodal" data-remodal-id="live" data-remodal-options="hashTracking:false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <h2>Live</h2>
+        チケットの取り置き、お問い合わせ等はTwitter又はコンタクトフォームより承っております。
+        <div id="livecontents">
+          <div v-for="live in lives">
+            <h4>{{live.date}} at {{live.place}}</h4>
+            <h5>{{live.title}}</h5>
+            <img :src="live.img" class="liveimg" v-show="live.img">
+            <div class="livedetail" v-html="live.text"></div>
+          </div>
+          <a href="#" v-on:click.prevent="showPastlive" v-show="!isPastlive">[過去のライブ]</a><br><br>
+        </div>
+        <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
+      </div>
+      <!-- ======END OF LIVE====== -->
+
+      <!-- ======= GOODS ======= -->
+      <div class="remodal" data-remodal-id="goods" data-remodal-options="hashTracking:false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+          <h2>Goods</h2>
+          <br><a href="img/goods2.jpg"><img src="img/goods2.jpg" style="width:90%;"></a><br>郵送でも販売しております。<br>
+        <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
+      </div>
+      <!-- ======END OF GOODS====== -->
+
+      <!-- ======== CONTACT   ======= -->
+        <div class="remodal" data-remodal-id="contact" data-remodal-options="hashTracking:false">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <h2>Contact</h2>
+          チケットの取り置きやお問い合わせはこちらから、またはTwitterからどうぞ。<br>
+          <br>
+          <!-- ==MAIL FORM=== -->
+            <div class="custom02" style="text-align:left;">
+              <span id="error" style="color:red"></span>
+              <form id="form" name="form">
+                <input name="name" type="text" id="name" size="20" placeholder="名前"><br>
+                <input name="mail" type="text" id="email" size="50" placeholder="メールアドレス"><br>
+                <textarea name="message" cols="50" rows="10" placeholder="内容" id="message"></textarea><br><br>
+                <input type="button" name="button" id="button" value="送信">  <br>
+                <input type="hidden" name="test" value="" id="formtest" />
+              </form>
+            </div>
+          <!-- ==END OF MAIL FORM=== -->
+          <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
+        </div>
+      <!-- ======END OF CONTACT ====== -->
+
+    <!-- ==contents (main) end ===== -->
+    </div>
+    <!-- ========================= -->
+
+  <!-- ===== container end ===== -->
+  </div>
+  <!-- ========================= -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91239597-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+$(function(){
+  $("#formtest").val("ykpythemind");
+});
+
+$(document).on('click','#button',function(e){
+  if( $("#message").val() && $("#email").val() && $("#name").val() ){
+    if(!$("#email").val().match("^[0-9A-Za-z._\-]+@[0-9A-Za-z.\-]+$")){
+       $('#error').html('メールアドレス形式で記入して下さい');
+       return false;
+    }
+
+    var data = $("#form").serialize();
+    $('#form').html('sending...');
+    $('#error').html('');
+     $.ajax({
+        type: "POST",
+        url: "mailsend.php",
+        data: data,
+        success: function(xml){
+           $('#form').html('送信しました.');
+        },
+        error: function() {
+          $('#form').html(' ');
+          $('#error').html('エラー　メールアドレスをご確認下さい。 (何度もこのメッセージが出る場合、ツイッターから送っていただけると確実です)<br> <a href="index.html">リロード</a>');
+        }
+     });
+    } else {
+      $('#error').html('未記入の項目があります。');
+    }
+  });
+</script>
+
+<!-- ====== END OF APP ======= -->
+</div>
+<!-- ========================= -->
+  <noscript>JavaScriptを有効にして下さい</noscript>
+  <div id="ie_show">猫を堕ろす <br> Internet Exploler 9以下, Android Browserは対応しておりません。 <a href="https://www.google.co.jp/chrome/">Google Chrome</a>などで閲覧して下さい。</div>
+</body>
+</html>

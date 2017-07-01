@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+html{
+  font-size:13px;
+}
+
+body {
+    font-family:Avenir , "Open Sans" , "Helvetica Neue" ,Helvetica , "ヒラギノ角ゴシック ProN" ,"メイリオ",Meiryo, sans-serif, "ＭＳ Ｐゴシック" , "MS PGothic";
+    font-weight:lighter;
+    background-color: #000;
+    color:#fff;
+    position:relative;
+}
+
+
+a:link,a:visited,a:active{ color:#fff; }
+a:hover{ color:#fff; background-color:rgba(0,0,0,0.65); cursor: pointer;}
+
+/* border-box*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+header{
+    height:100vh; width:100%;
+    display:-webkit-box;display:-ms-flexbox;display:flex;
+      -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; -ms-grid-row-align:center; align-items:center;
+}
+
+#headerinner{
+    width:100%;
+    background-image: url(../img/nk_car_back_min.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo{
+    height:40vh; /* ロゴ外サイズ */
+    border:solid #fff;
+    border-width: 5px;
+    margin:15px 10px;
+    display:-webkit-box;display:-ms-flexbox;display:flex;
+      -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; -ms-grid-row-align:center; align-items:center;
+  }
+#logo img{ width:320px; height: auto; }
+
+#container{width:100%;
+  -webkit-overflow-scrolling: touch; }
+#contents{ width:300px; margin:0 auto;}
+
+h2{ font-size:2em; text-align: center;}
+h3{ margin-top:3rem; }
+h4{font-weight: normal;}
+h5{ font-size:1.3em; font-weight: normal; margin:-10px auto 10px auto;}
+.imgborder{border:1px solid #222; }
+
+.flexouter{
+    display: -webkit-box; display: -ms-flexbox;  display: flex;
+    -ms-flex-wrap: wrap;  flex-wrap: wrap;
+    background-color:rgba(0,0,0,0.55); color:#fff;
+}
+
+/* PC時メニュー off */
+#menuouter{ display:none; }
+
+.bglock{
+  position:fixed;
+  top:0px; left:0px;
+}
+
+
+/* アコーディオン */
+#acordtop{
+    font-size:1.3em;  display: block;
+    width: 42px;
+    height:42px;
+    position: relative;
+    z-index: 3;
+}
+#acord{ position:fixed; top: 0px; right: 0px; padding:5px;  }
+#acordin{
+    display:none;
+    position: fixed;
+    top:45px; right:0px;
+    text-align: right;
+}
+#acordin ul {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+  -ms-flex-flow: column nowrap; flex-flow: column nowrap;
+    min-height:180px;
+
+  margin:0px; padding: 0px;
+  list-style-type: none;
+}
+#acordin li a{ display:block; }
+#acordin li{
+  font-size:21px;
+  padding-right:17px; padding-top:4px;
+  }
+#acordin li a,a:hover{ text-decoration: none;background-color: rgba(0,0,0,0);}
+#acordin li:first-child{ margin-top:0;}
+
+/* ---------------*/
+
+
+.liveimg{ width:80%;}
+
+#person{
+  margin: 0;
+  padding:0;
+  padding-bottom: 10px;
+  font-size:1.2em;
+  list-style-type: none;
+  text-align: left;
+}
+
+.livedetail{ font-size:0.9rem; margin-bottom:50px;}
+.sc_link{text-decoration:none; font-size:1.4em; border:1px solid #ccc; padding:4px; border-radius:2px;}
+
+
+
+
+  /* ---------- for PC and tablet -------------*/
+@media screen and (min-width:641px) {
+    html{ font-size:14px;}
+    body{
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #000;
+      color:#fff;
+      background-image: url(../img/nk_car_back_min.jpg);
+    }
+    #headerinner{ min-width:640px; width:80%; height:auto; background : none;}
+
+    .flexitemfix{ width:220px; }
+    .flexitem{-webkit-flex: 1; flex: 1;}
+
+    #contents{ min-width:630px; width:60vw;}
+
+    header{
+      background: none;
+      height:100vh;
+      display:-webkit-box;   display:-ms-flexbox; display:flex;
+      -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; -ms-grid-row-align:center; align-items:center;
+     }
+    #logo{ width:100%; height:auto; margin:0 auto 7px 0; border:0px; }
+    #logo img{ width:100%;}
+
+    #acord{display:none;}
+    #menuouter{ display:block; font-size:1.35em;}
+    #menuouter ul {
+      display: -webkit-box; display: -ms-flexbox; display: flex;
+      -ms-flex-flow: row wrap; flex-flow: row wrap;
+      margin: 0;
+      padding: 6px;
+      list-style-type: none;
+    }
+
+    #menuouter li { border-bottom:0px; height:1.3em;   }
+    #menuouter .menusback a{
+      -webkit-transition: background 0.4s;
+      transition: background 0.4s;
+      background-color: rgba(42, 42, 42, 0.7);
+      padding:1px 3px 1px 3px;
+    }
+    #menuouter li a:link,a:visited,a:active{ color:#fff; text-decoration: none;}
+    #menuouter .menusback a:hover { background-color: #999; text-decoration: none;}
+    #menuouter li:not(:first-child){ margin-left:10px;  }
+
+}
+/* --- PC end----*/
+
+
+
+#ie_show{ display:none; padding:20px;}
+
+
+/* ----- icons (use fontawesome) ----- */
+#icon #social-icon a:hover { border:0px; }
+#social-icon a {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 0;
+  color: #fff;
+}
+#social-icon i {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.57);
+  line-height: 40px;
+  text-align: center;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+}
+#social-icon i:before { padding 0; line-height: 40px; }
+#social-icon a:hover i { background: #999; }
+
+
+
+
+/* ------------ form  ------------- */
+.custom02{width:80%; margin:0px auto;}
+input, textarea, select, option {
+  color: #fff;
+    background-color: rgba(0,0,0,0.4);
+  font-family: 'Open Sans', sans-serif;
+}
+.custom02 input,
+.custom02 textarea,
+.custom02 select {
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+width:100%;
+border-bottom: 1px solid #ddd;
+}
+
+.custom02 #button{ width:20%;border: 1px solid #ddd; }
+
+
+/* ------------ 3本メニュー ------------ */
+#acordtop span {
+    display: block;
+    background: #fff;
+    width: 24px;
+    height: 2px;
+    position: absolute;
+    left: 9px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+#acordtop span:first-child {
+    top: 12px;
+}
+#acordtop span:nth-child(2) {
+    margin-top: -1px;
+    top: 50%;
+}
+#acordtop span:last-child {
+    bottom: 12px;
+}
+#acordtop.active span:first-child {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -moz-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+#acordtop.active span:nth-child(2) {
+    opacity: 0;
+}
+#acordtop.active span:last-child {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -moz-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
