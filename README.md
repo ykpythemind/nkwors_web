@@ -13,3 +13,10 @@ yarn run server
 
 - /  
 - /nkwors ... web root
+
+
+## host
+
+sakura VPS 
+160.16.78.67
+http://nkwors.com/
