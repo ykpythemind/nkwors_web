@@ -18,6 +18,8 @@ window.onload = function() {
           window.open('https://twitter.com/nkwors');
         }else if (slag === "soundcloud"){
           window.open('https://soundcloud.com/nkwors');
+        }else if (slag === "youtube"){
+          window.open('https://www.youtube.com/watch?v=3SGmdrPiYH0');
         }else{
         $('[data-remodal-id='+slag+']').remodal().open();
         }
