@@ -32,7 +32,7 @@ var getListOfContents = (function(){
     },
     live: function(){
       return [
-        { title: '悲しいことに慣れたならvol.7', date: '2017/8/6', place: '新栄DAYTRIVE', img: '', text: ''},
+        { title: '悲しいことに慣れたならvol.7', date: '2017/8/6', place: '新栄DAYTRIVE', img: 'img/nare_7.png', text: '猫を堕ろすpresents【悲しいことに慣れたなら vol.7】DALLJUB STEP CLUB 「CHECK THE SHADOW」Release Tour <br><br>名古屋 新栄DAYTRIVE<br>open  18:30 / start 19:00<br>ticket 3000円 (FREEDRINK)<br>act: 猫を堕ろす / DALLJUB STEP CLUB (東京) / yobai video (茨城) / the coast / the Ships'},
         { title: '『β beat』', date: '2017/7/9', place: '京都GROWLY', img: '', text: '出演:ネオンズ/ジェットシンセサイザーズ/DAVID BOYS/SUNNY SIDE RAINS/BAKEMON<br>開演18:00 前売2000円<br>初の県外ライブ'},
         { title: '「夏のビール祭り～名古屋場所」', date: '2017/6/18', place: '鶴舞KDハポン', img: '', text: 'w/ テトペッテンソン / ハポン。/ mmm / mad tapes erase group / 黒岡まさひろ / [DJ] Oya Goto Senseidani / [DECO] AZK <br><br>16:30～ ￥2500'},
         { title: '悲しいことに慣れたならvol.6', date: '2017/5/7', place: '鶴舞DAYTRIP', img: 'img/kanasi_kotoni_naretanara_vol6_mini.jpg',text: '1stアルバム「The Cats Are Alright」レコ発！！ <br>open  18:00 / start 18:30 ticket 3000円(FREEDRINK) <br> act :猫を堕ろす / soratobiwo / 谷本早也歌 / LADY FLASH / ハポン。'},
