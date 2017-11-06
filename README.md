@@ -12,6 +12,8 @@ yarn run server
 
 ## auto deploy
 masterブランチにpushされた時にpipelinesで自動デプロイされる
+bitbucket側でEnvironment variablesの設定をする
+ $FTP_USERNAME $FTP_PASSWORD
 
 
 ## directory
@@ -25,5 +27,3 @@ masterブランチにpushされた時にpipelinesで自動デプロイされる
 sakura VPS 
 160.16.78.67
 http://nkwors.com/
-ftp user : ykpyftp 
-pass : 冬町22

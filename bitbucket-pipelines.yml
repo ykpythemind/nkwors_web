@@ -16,5 +16,5 @@ pipelines:
           - apt-get update
           - apt-get -qq install git-ftp
           - echo "Initiating Push"
-          - git ftp push --user ykpyftp --passwd winterwait22 ftp://160.16.78.67/nkwors_web
+          - git ftp push --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://160.16.78.67/nkwors_web
           - echo "Done Pushing "
