@@ -32,7 +32,7 @@ var getListOfContents = (function(){
     },
     live: function(){
       return [
-        { title: 'Synchronized Rockers Vol.46', date: '2017/12/29', place: '新栄Club Rock\'n\'nRoll', img: '', text: '[LIVE] monaca yellow city / ゼローネ / ロストフィルム / [DJ] 野垣内悠'},
+        { title: 'Synchronized Rockers Vol.46', date: '2017/12/29', place: '新栄Club Rock\'n\'nRoll', img: 'img/rock.jpg', text: '[LIVE] monaca yellow city / ゼローネ / ロストフィルム / [DJ] 野垣内悠'},
         { title: 'For sight vol.3', date: '2017/9/23', place: '栄TIGHTROPE', img: 'img/forsight.jpg', text: 'ろいさん企画'},
         { title: '16ビートアザラシコンピツアー 京都編', date: '2017/9/3', place: '京都GROWLY', img: 'img/16beat_kyoto.jpg', text: '開演:17:30 / 前売:2,000円<br> w/ Emu sickS / about a ROOM（福岡） / SAPPY（神戸） / YOOKs'},
         { title: '悲しいことに慣れたならvol.7', date: '2017/8/6', place: '新栄DAYTRIVE', img: 'img/nare_7.png', text: '猫を堕ろすpresents【悲しいことに慣れたなら vol.7】DALLJUB STEP CLUB 「CHECK THE SHADOW」Release Tour <br><br>名古屋 新栄DAYTRIVE<br>open  18:30 / start 19:00<br>ticket 3000円 (FREEDRINK)<br>act: 猫を堕ろす / DALLJUB STEP CLUB (東京) / yobai video (茨城) / the coast / the Ships'},
