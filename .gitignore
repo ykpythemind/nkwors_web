@@ -4,3 +4,6 @@
 .ftpconfig
 node_modules/
 .nuxt/
+.cache/
+.secret
+dist/
