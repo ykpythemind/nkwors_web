@@ -1,8 +1,8 @@
-import '../font-awesome-4.6.3/css/font-awesome.min';
-import "../css/normalize";
-import "../css/style";
-import "../css/remodal";
-import "../css/remodal-default-theme";
+import './font-awesome-4.6.3/css/font-awesome.min';
+import "./css/normalize";
+import "./css/style";
+import "./css/remodal";
+import "./css/remodal-default-theme";
 
 import jQuery from "jquery";
 import Vue from "vue/dist/vue.esm";
@@ -11,10 +11,10 @@ import Vue from "vue/dist/vue.esm";
 window.$ = jQuery;
 window.jQuery = jQuery;
 
-const getListOfContents = require('../data.js').default;
+const contents = require('./data.js').default;
 
-require('./remodal.js');
-require('./jquery.easing.1.3.js');
+require('./js/remodal.min.js');
+require('./js/jquery.easing.1.3.js');
 
 window.onload = function() {
 
@@ -22,8 +22,8 @@ window.onload = function() {
     el: '#app',
     data: {
       isActive: false,
-      listsMobile: getListOfContents.mobile(),
-      lists: getListOfContents.list()
+      listsMobile: contents.mobile(),
+      lists: contents.list()
     },
     methods: {
       touch: function(event){
@@ -47,19 +47,19 @@ window.onload = function() {
   var vm2 = new Vue({
     el: '#person',
     data: {
-      persons: getListOfContents.name()
+      persons: contents.name()
     }
   });
 
   var vm3 = new Vue({
     el: '#livecontents',
     data: {
-      lives: getListOfContents.live().slice(0, 5),
+      lives: contents.live().slice(0, 5),
       isPastlive: false
     },
     methods: {
       showPastlive: function(e) {
-        this.lives = getListOfContents.live();
+        this.lives = contents.live();
         this.isPastlive = true;
       }
     }
