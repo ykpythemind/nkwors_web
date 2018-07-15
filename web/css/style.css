@@ -110,9 +110,12 @@ h5{ font-size:1.3em; font-weight: normal; margin:-10px auto 10px auto;}
   margin: 0;
   padding:0;
   padding-bottom: 10px;
-  font-size:1.2em;
   list-style-type: none;
   text-align: left;
+}
+
+#person li {
+  padding-bottom: 6px;
 }
 
 .livedetail{ font-size:0.9rem; margin-bottom:50px;}
