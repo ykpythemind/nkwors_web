@@ -5,25 +5,10 @@
 ## develop 
 ```
 yarn
-yarn run server
+yarn run dev
 ```
--> http://localhost:8080/
-
-
-## auto deploy
-masterブランチにpushされた時にpipelinesで自動デプロイされる
-bitbucket側でEnvironment variablesの設定をする
- $FTP_USERNAME $FTP_PASSWORD
-
-
-## directory
-
-- /  
-- /nkwors ... web root
-
 
 ## host
 
-sakura VPS 
-160.16.78.67
-http://nkwors.com/
+Amazon S3
+http://nkwors.com.s3-website-ap-northeast-1.amazonaws.com/
