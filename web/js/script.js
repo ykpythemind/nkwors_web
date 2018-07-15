@@ -1,3 +1,20 @@
+import '../font-awesome-4.6.3/css/font-awesome.min';
+import "../css/normalize";
+import "../css/style";
+import "../css/remodal";
+import "../css/remodal-default-theme";
+
+import jQuery from "jquery";
+import Vue from "vue/dist/vue.esm";
+
+// Hack
+window.$ = jQuery;
+window.jQuery = jQuery;
+
+const getListOfContents = require('../data.js').default;
+
+require('./remodal.js');
+require('./jquery.easing.1.3.js');
 
 window.onload = function() {
 

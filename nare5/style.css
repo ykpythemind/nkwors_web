@@ -1,0 +1,171 @@
+
+@charset "utf-8";
+/* nkwors 2017/1/28 */
+
+
+html{
+	font-size:13px;
+}
+
+body {
+		font-family:Avenir , "Open Sans" , "Helvetica Neue" ,Helvetica , "ヒラギノ角ゴシック ProN" ,"メイリオ",Meiryo, sans-serif, "ＭＳ Ｐゴシック" , "MS PGothic";
+		font-weight:lighter;
+		background-color: #000;
+		color:#fff;
+		position:relative;
+}
+
+
+a:link,a:visited,a:active{ color:#fff; }
+a:hover{ color:#fff; background-color:rgba(0,0,0,0.65); cursor: pointer;}
+
+/* border-box*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+#container{width:90%; max-width:1200px; margin:0 auto;
+position: relative;}
+
+h2{ font-size:2.4em; text-align: center;}
+h3{ margin-top:3rem; }
+h4{font-weight: normal;}
+h5{ font-size:1.3em; font-weight: normal; margin:-10px auto 10px auto;}
+
+.liveimg{ width:80%;}
+
+.livedetail{ font-size:0.9rem; margin-bottom:50px;}
+.sc_link{text-decoration:none; font-size:1.4em; border:1px solid #ccc; padding:4px; border-radius:2px;}
+
+
+	img{ width:100%;}
+	.blank{ height:3rem; }
+
+.downarea{
+	text-align: center;
+	position:absolute;
+	bottom:0px;right:0px;
+	width:100%; height:10%;
+	font-size:5rem;
+}
+
+.maintext{
+	font-size:14px;
+}
+
+.actimg{
+	margin:1rem auto 1rem auto;
+	width:95%; max-width:700px;
+}
+.actlogo{
+	margin:1rem auto 1rem auto;
+	max-width:300px;
+	min-width:200px;
+	width:30%;
+}
+.act{
+	margin-bottom:4rem;
+}
+
+.frame{
+	margin:0 auto; max-width:300px; width:100%; height:auto;
+}
+
+
+  /* ---------- for PC and tablet -------------*/
+@media screen and (min-width:641px) {
+		html{ font-size:17px;}
+		body{
+		}
+		h2{ font-size:3em; text-align: center;}
+
+		.maintext{
+			font-size:25px;
+		}
+
+		.frame{
+			margin:0 auto; width:400px; height:300px;
+		}
+
+}
+/* --- PC end----*/
+
+
+/* ----- icons (use fontawesome) ----- */
+#icon #social-icon a:hover { border:0px; }
+#social-icon a {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 0;
+  color: #fff;
+}
+#social-icon i {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.57);
+  line-height: 40px;
+  text-align: center;
+	-webkit-transition: background 0.4s;
+	transition: background 0.4s;
+}
+#social-icon i:before { padding 0; line-height: 40px; }
+#social-icon a:hover i { background: #999; }
+
+
+
+/* ふわっとよみこみ */
+body {
+	animation: fadeIn 2s ease 0s 1 normal;
+	-webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

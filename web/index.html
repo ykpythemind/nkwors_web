@@ -5,18 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
-  <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-  <link href="./css/normalize.css" rel="stylesheet"/>
-  <link href="./css/style.css" rel="stylesheet"/>
-  <link href="./css/remodal.css" rel="stylesheet"/>
-  <link href="./css/remodal-default-theme.css" rel="stylesheet"/>
-  <script src="./js/jquery-1.11.2.min.js"></script>
-  <script src="./js/vue.min.js"></script>
-  <script src="./data.js"></script>
-  <script src="./js/remodal.js"></script>
-  <script src="./js/jquery.easing.1.3.js"></script>
-  <script src="./js/script.js"></script>
   <!--[if IE]>
     <script type="text/javascript">
     $(function(){
@@ -101,7 +89,7 @@
 
         <h3>配信シングル「シナプス」</h3>
         <center><img src="img/synapse.png" style="width:80%; max-width:300px; height:auto;" class="imgborder"><br>
-        2017/8/4 Release | <a href="synapse/index.html">特設ページ</a>
+        2017/8/4 Release | <a href="http://nkwors.com/synapse/">特設ページ</a>
 
         <h3>1st album &quot;The Cats Are Alright&quot;</h3>
         <center><img src="img/the_cats_are_jacket.jpg" style="width:80%; max-width:300px; height:auto;" class="imgborder"><br>
@@ -114,7 +102,7 @@
 
         <h3>無料配信音源「恋する猫は淑女の気持ち」</h3>
         <img src="img/shukujo_jacket_min.jpg" style="max-width:300px;"><br>
-        2016/5/28 Release | <a href="shukujo/index.html">特設ページ</a>
+        2016/5/28 Release | <a href="http://nkwors.com/shukujo/">特設ページ</a>
 
         <br>
         <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
@@ -179,6 +167,15 @@
   </div>
   <!-- ========================= -->
 
+
+<!-- ====== END OF APP ======= -->
+</div>
+<!-- ========================= -->
+  <noscript>JavaScriptを有効にして下さい</noscript>
+  <div id="ie_show">猫を堕ろす <br> Internet Exploler 9以下, Android Browserは対応しておりません。 <a href="https://www.google.co.jp/chrome/">Google Chrome</a>などで閲覧して下さい。</div>
+
+  <script src="./js/script.js"></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -189,43 +186,5 @@
   ga('send', 'pageview');
 </script>
 
-<script>
-$(function(){
-  $("#formtest").val("ykpythemind");
-});
-
-$(document).on('click','#button',function(e){
-  if( $("#message").val() && $("#email").val() && $("#name").val() ){
-    if(!$("#email").val().match("^[0-9A-Za-z._\-]+@[0-9A-Za-z.\-]+$")){
-       $('#error').html('メールアドレス形式で記入して下さい');
-       return false;
-    }
-
-    var data = $("#form").serialize();
-    $('#form').html('sending...');
-    $('#error').html('');
-     $.ajax({
-        type: "POST",
-        url: "mailsend.php",
-        data: data,
-        success: function(xml){
-           $('#form').html('送信しました.');
-        },
-        error: function() {
-          $('#form').html(' ');
-          $('#error').html('エラー　メールアドレスをご確認下さい。 (何度もこのメッセージが出る場合、ツイッターから送っていただけると確実です)<br> <a href="index.html">リロード</a>');
-        }
-     });
-    } else {
-      $('#error').html('未記入の項目があります。');
-    }
-  });
-</script>
-
-<!-- ====== END OF APP ======= -->
-</div>
-<!-- ========================= -->
-  <noscript>JavaScriptを有効にして下さい</noscript>
-  <div id="ie_show">猫を堕ろす <br> Internet Exploler 9以下, Android Browserは対応しておりません。 <a href="https://www.google.co.jp/chrome/">Google Chrome</a>などで閲覧して下さい。</div>
 </body>
 </html>

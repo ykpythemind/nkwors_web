@@ -1,13 +1,13 @@
-const getListOfContents = (function() {
-  const t = [
-    { text: 'Biography', slag: 'bio' },
-    { text: 'Discography', slag: 'disco' },
-    { text: 'Live', slag: 'live' },
-    { text: 'Goods', slag: 'goods' },
-    { text: 'Contact', slag: 'contact' }
-  ];
+const t = [
+  { text: 'Biography', slag: 'bio' },
+  { text: 'Discography', slag: 'disco' },
+  { text: 'Live', slag: 'live' },
+  { text: 'Goods', slag: 'goods' },
+  { text: 'Contact', slag: 'contact' }
+];
 
-  return {
+
+export default {
     mobile() {
       const t2 = t.slice();
       t2.splice(-1, 0, { text: 'Twitter', slag: 'twitter' });
@@ -173,6 +173,5 @@ const getListOfContents = (function() {
       ];
     }
   };
-})();
 
 // { title: '', date: '', place: '', img: '',text: ''},
