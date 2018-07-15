@@ -25,7 +25,8 @@
       <div id="acordin">
         <ul>
           <li v-for="list in listsMobile">
-            <a v-bind:href="'#' + list.slag" v-on:click.prevent="listclick(list.slag)">{{ list.text }}</a>
+            <a v-bind:href="'#' + list.slag" v-on:click.prevent="listclick(list.slag)" v-if="list.slag !== 'contact'">{{ list.text }}</a>
+            <a href="https://goo.gl/forms/mG7UfVwT9gSy060t2" target="_blank" v-if="list.slag === 'contact'">{{ list.text }}</a>
           </li>
         </ul>
       </div>
