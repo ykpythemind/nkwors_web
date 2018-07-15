@@ -8,5 +8,5 @@ cp -r nare5 dist/
 cp -r shukujo dist/
 cp -r synapse dist/
 cp -r sound-recruiting dist/
-yarn run s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket nkwors-web
+yarn run s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket nkwors.com
 
