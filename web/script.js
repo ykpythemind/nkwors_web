@@ -36,6 +36,8 @@ window.onload = function() {
           window.open('https://soundcloud.com/nkwors');
         } else if (slag === 'youtube') {
           window.open('https://www.youtube.com/watch?v=3SGmdrPiYH0');
+        } else if (slag === 'contact') {
+          window.open('https://goo.gl/forms/mG7UfVwT9gSy060t2');
         } else {
           $('[data-remodal-id=' + slag + ']')
             .remodal()
@@ -96,14 +98,5 @@ window.onload = function() {
     $('#app').removeClass('bglock');
   });
 
-  openModalWhenHashIsPresent();
 };
 
-function openModalWhenHashIsPresent() {
-  var list = contents.list();
-  var hash = window.location.hash.substr(1);
-
-  $('[data-remodal-id=' + slag + ']')
-    .remodal()
-    .open();
-}
