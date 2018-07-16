@@ -30,6 +30,46 @@ export default {
     live() {
       return [
         {
+          title: 'changes here',
+          date: '2018/6/16',
+          place: 'Studio 246 Nagoya',
+          img: '',
+          text:
+            'adv ￥1500  op/st 17:30/18:00 <br> w/ Shift Control /  Agjijer /  flamingo / fulusu'
+        },
+        {
+          title: '名大フォーク 名大祭ライブ ｢MA MA MANJI｣',
+          date: '2018/6/10',
+          place: '名古屋大学 学生会館 第9集会室',
+          img: '',
+          text:
+            '猫を堕ろす出生サークルで出演させていただきます！ <a href="https://twitter.com/nkwors/status/1004241495115771904?s=21" target="_blank">詳細</a>'
+        },
+        {
+          title: 'ネオンズ Onami Konami tour 2018',
+          date: '2018/5/20',
+          place: '新栄DAYTRIVE',
+          img: 'img/neons.jpg',
+          text:
+            'w/ ネオンズ(東京) / SWEESWEESWEETS / ワッペリン'
+        },
+        {
+          title: 'ophill企画「carrot rope」',
+          date: '2018/5/6',
+          place: '鶴舞K.Dハポン',
+          img: 'img/ophill.jpg',
+          text:
+            'w/ vihta / イトウミオ / モマーモッツ / ophill'
+        },
+        {
+          title: '至誠-GROWLY 6th Anniversary!!',
+          date: '2018/4/22',
+          place: '京都GROWLY',
+          img: '',
+          text:
+            'w/ SAPPY / Emu sickS / Via tov(東京) / dot.(東京) /  potekomuzin(東京)'
+        },
+        {
           title: 'WONDER WALL vol.5×DUNCE SCHOOL vol.5',
           date: '2018/2/25',
           place: '鶴舞KDハポン',
