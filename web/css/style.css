@@ -104,7 +104,7 @@ h5{ font-size:1.3em; font-weight: normal; margin:-10px auto 10px auto;}
 /* ---------------*/
 
 
-.liveimg{ width:80%;}
+.liveimg{ width:80%; max-width: 240px; }
 
 #person{
   margin: 0;
@@ -126,6 +126,9 @@ h5{ font-size:1.3em; font-weight: normal; margin:-10px auto 10px auto;}
 
   /* ---------- for PC and tablet -------------*/
 @media screen and (min-width:641px) {
+
+  .liveimg{ width:80%; max-width: 500px; }
+
     html{ font-size:14px;}
     body{
       background-position: center center;
