@@ -125,10 +125,12 @@
           <div v-for="live in lives">
             <h4>{{live.date}} at {{live.place}}</h4>
             <h5>{{live.title}}</h5>
-            <img :src="live.img" class="liveimg" v-show="live.img">
+            <a :href="live.img" target="_blank" v-show="live.img">
+              <img :src="live.img" class="liveimg" v-show="live.img">
+            </a>
             <div class="livedetail" v-html="live.text"></div>
           </div>
-          <a href="#" v-on:click.prevent="showPastlive" v-show="!isPastlive">[過去のライブ]</a><br><br>
+          <a href="#" v-on:click.prevent="showPastlive"> {{ pastPosition === 1 ? "[過去のライブ]" : "[もっと見る]" }}</a><br><br>
         </div>
         <button data-remodal-action="confirm" class="remodal-confirm">CLOSE</button>
       </div>

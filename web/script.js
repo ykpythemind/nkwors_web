@@ -55,12 +55,12 @@ window.onload = function() {
     el: '#livecontents',
     data: {
       lives: contents.live().slice(0, 5),
-      isPastlive: false
+      pastPosition: 1
     },
     methods: {
       showPastlive: function(e) {
-        this.lives = contents.live();
-        this.isPastlive = true;
+        this.pastPosition++;
+        this.lives = contents.live().slice(0, 5 * this.pastPosition);
       }
     }
   });
