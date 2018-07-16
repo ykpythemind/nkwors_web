@@ -25,7 +25,7 @@
       <div id="acordin">
         <ul>
           <li v-for="list in listsMobile">
-            <a v-bind:href="'#/' + list.slag" v-on:click="listclick(list.slag)">{{ list.text }}</a>
+            <a v-bind:href="'#/' + list.slag" v-on:click.prevent="listclick(list.slag)">{{ list.text }}</a>
           </li>
         </ul>
       </div>
@@ -34,7 +34,7 @@
         <div id="menuouter">
           <ul>
             <li v-for="list in lists" class="menusback">
-              <a v-bind:href="'#/' + list.slag" v-on:click="listclick(list.slag)">{{ list.text }}</a>
+              <a v-bind:href="'#/' + list.slag" v-on:click.prevent="listclick(list.slag)">{{ list.text }}</a>
             </li>
             <li style="margin-left:auto; margin-top:-10px;" id="icon">
               <div id="social-icon">
