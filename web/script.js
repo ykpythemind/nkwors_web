@@ -90,13 +90,3 @@ window.onload = function() {
   });
 
 };
-
-$(function(){
-    var isAndroidBrowser = false;
-    var ua = window.navigator.userAgent;
-    if (/Android/.test(ua) && /Linux; U;/.test(ua) && !/Chrome/.test(ua)) {
-      isAndroidBrowser = true;
-      $("#container").css("display","none");
-      $("#ie_show").css("display","block");
-    }
-});
