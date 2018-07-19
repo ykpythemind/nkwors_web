@@ -15,7 +15,7 @@ cp favicon.ico dist/
 
 cp -r web/img dist/img/ # parcel で管理されていない静的画像ファイル
 
-yarn run s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket nkwors.com
+yarn run s3-deploy './dist/**' --cwd './dist/' --region us-west-2 --bucket nkwors.com --distId E22MIW1G6SDNSA --invalidate '/*'
 
 ruby deploy_detail.rb
 
