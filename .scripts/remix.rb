@@ -5,6 +5,7 @@ people = []
 people.push Person.new("タルモト", "Lover come back to me", "https://app.box.com/s/d05mcltej9aquf2w7h28zm1odh6j6hc4")
 people.push Person.new("taketake", "シナプス", "https://app.box.com/s/ny6uup722hzo6bf74ol3ihv1570sya1p")
 people.push Person.new("あまね", "Sound Recruiting", "https://app.box.com/s/he4m72x5ya2k1hi6zburqbbi23109avm")
+people.push Person.new("柴垣", "ウィンターウェイティング", "https://app.box.com/s/uwf6rkn3o1bj84ky5pswb17g7kpozyza")
 
 template = File.open('remix.txt').read
 
