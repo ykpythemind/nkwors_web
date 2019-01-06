@@ -2,21 +2,16 @@
 
 set -eu
 
-rm -rf dist # clean up
-yarn run build
+bundle exec middleman build --clean
 
-# parcel管理外のフォルダをコピー
-cp -r nare5 dist/
-cp -r shukujo dist/
-cp -r synapse dist/
-cp -r sound-recruiting dist/
+# 管理外のフォルダをコピー
+cp -r synapse build/
+cp -r sound-recruiting build/
 
-cp favicon.ico dist/
+cp favicon.ico build/
 
-cp -r web/img dist/img/ # parcel で管理されていない静的画像ファイル
-
-yarn run s3-deploy './dist/**' \
-    --cwd './dist/' \
+yarn run s3-deploy './build/**' \
+    --cwd './build/' \
     --region us-west-2 \
     --bucket nkwors.com \
     --distId E22MIW1G6SDNSA \
@@ -24,4 +19,3 @@ yarn run s3-deploy './dist/**' \
     --deleteRemoved
 
 ruby deploy_detail.rb
-
