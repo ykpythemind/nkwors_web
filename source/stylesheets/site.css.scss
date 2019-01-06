@@ -52,6 +52,10 @@ body.index {
   text-align: left;
 }
 
+.mb {
+  margin-bottom: 2rem;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -133,6 +137,13 @@ footer.index {
     padding: 0 0.5rem;
   }
 
+  .jacket {
+    flex: 1;
+    margin-right: 0px;
+  }
+  .jacket > img {
+    width: 80% !important;
+  }
 }
 
 .flex {
@@ -164,9 +175,10 @@ footer.index {
 
 
 .jacket {
-  width: 200px;
+  flex-basis: 200px;
   flex-shrink: 0;
   margin-right: 15px;
+  text-align: center;
 }
 
 .jacket img {
