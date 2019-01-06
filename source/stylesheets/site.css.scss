@@ -71,8 +71,8 @@ footer {
     height: 100%;
   }
   .logo {
-    // flex-basis: 300px;
-    width: 170px;
+    flex-basis: 170px;
+    flex-shrink: 0;
     padding: 0 2rem;
   }
   .logo img {
@@ -113,11 +113,55 @@ footer.index {
 .flex {
   display: flex;
 }
+
 @media screen and (max-width: 480px) {
   .flex {
     flex-wrap: wrap;
   }
+
+  .menu .menuinner {
+    display: none;
+  }
+
+  footer {
+    height: 80px;
+  }
+
+  footer .logo {
+    flex-basis: 120px;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+  }
+
 }
+
+.flex {
+  .date {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+}
+
+.h3 {
+  margin-top: 0px;
+  border-bottom: 1px solid #ddd;
+}
+
+.live-outer {
+  margin-bottom: 5rem;
+}
+
+.live-outer {
+  .title {
+    margin-top: 0px;
+  }
+  .image {
+    width: 70%;
+    max-width: 700px;
+  }
+}
+
 
 .jacket {
   width: 200px;
