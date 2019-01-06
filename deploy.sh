@@ -10,6 +10,8 @@ cp -r sound-recruiting build/
 
 cp favicon.ico build/
 
+exit
+
 yarn run s3-deploy './build/**' \
     --cwd './build/' \
     --region us-west-2 \
