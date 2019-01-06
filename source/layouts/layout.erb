@@ -7,10 +7,42 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title.present? ? "#{current_page.data.title} | 猫を堕ろすWeb" : "猫を堕ろすWeb" %></title>
-    <%= stylesheet_link_tag "site" %>
+    <%= stylesheet_link_tag "all" %>
     <%= javascript_include_tag "site" %>
   </head>
-  <body>
-    <%= yield %>
+  <body class="Site <%= page_classes %>">
+    <main class="Site-content">
+      <% if current_page.data.title.present? %>
+        <h2><%= current_page.data.title %></h2>
+      <% end %>
+
+      <%= yield %>
+    </main>
+    <footer class="<%= page_classes %>">
+      <div class="footer-container">
+        <div class="logo">
+          <a href="/">
+            <img src="/images/nkwors.png" alt="nkwors logo">
+          </a>
+        </div>
+        <div class="menu">
+          <ul class="menuinner">
+            <li>
+              <%= link_to "Top", "/" %>
+            </li>
+            <li>
+              <%= link_to "Biography", "bio.html" %>
+            </li>
+            <li>
+              <%= link_to "Discography", "disco.html" %>
+            </li>
+            <li>
+              <%= link_to "Live", "live.html" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
   </body>
 </html>

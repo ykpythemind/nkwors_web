@@ -1,12 +1,15 @@
 body {
-  background-color: #fbc547;
-  color: #333;
+  background-color: #fff;
+  color: #222;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
   text-align: center;
+
+  font-size: 15px;
+
+  padding-bottom: 140px;
 }
 
 a {
@@ -18,7 +21,110 @@ a {
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+h2 {
+  font-size: 1.5rem;
+}
+
+.Site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+body.index {
+  padding-bottom: 0px;
+
+  background-image: url("../images/na.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin: 0px auto;
+  width: 80vw;
+  max-width: 860px;
+  text-align: left;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+
+  border-top: 1px solid #DDD;
+  height: 120px;
+}
+
+footer {
+  .footer-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .logo {
+    // flex-basis: 300px;
+    width: 170px;
+    padding: 0 2rem;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .menu {
+    flex-basis: 80%;
+  }
+}
+
+footer.index {
+  border: none;
+}
+
+
+.menu {
+  .menuinner {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menuinner li {
+    font-family: calluna-sans;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.04px;
+    padding: 0 4px 4px;
+    margin-right: 12px;
+  }
+
+}
+
+.flex {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  .flex {
+    flex-wrap: wrap;
+  }
+}
+
+.jacket {
+  width: 200px;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.jacket img {
+  width: 100%;
 }
