@@ -44,8 +44,12 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
+production = ENV['BUILD_ENV'] == 'production'
+
+bucket = production ? 'nkwors.com' : 'nkwors-staging'
+
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = ENV.fetch('AWS_BUCKET') { 'nkwors-staging' } # The name of the S3 bucket you are targeting. This is globally unique.
+  s3_sync.bucket                     = bucket # The name of the S3 bucket you are targeting. This is globally unique.
   s3_sync.region                     = 'ap-northeast-1'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
   s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
@@ -72,6 +76,10 @@ configure :build do
   activate :asset_hash
 
   # activate :asset_host, :host => '//YOURDOMAIN.cloudfront.net'
+end
+
+before_build do
+  puts "production mode / deploy bucket: #{bucket}" if production
 end
 
 after_build do
