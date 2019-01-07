@@ -45,7 +45,7 @@ page '/*.txt', layout: false
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'nkwors-staging' # The name of the S3 bucket you are targeting. This is globally unique.
+  s3_sync.bucket                     = ENV.fetch('AWS_BUCKET') { 'nkwors-staging' } # The name of the S3 bucket you are targeting. This is globally unique.
   s3_sync.region                     = 'ap-northeast-1'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
   s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
@@ -62,7 +62,21 @@ activate :s3_sync do |s3_sync|
   s3_sync.error_document             = '404.html'
 end
 
+default_caching_policy      max_age: (60 * 60 * 24 * 365)
+caching_policy 'text/html', max_age: 0, must_revalidate: true
+
 configure :build do
   activate :minify_css
-  # activate :minify_javascript
+  activate :minify_javascript
+
+  activate :asset_hash
+
+  # activate :asset_host, :host => '//YOURDOMAIN.cloudfront.net'
+end
+
+after_build do
+  status = system "sh after_build.sh"
+  if !status
+    abort "after build hook failed!"
+  end
 end
