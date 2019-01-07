@@ -1,0 +1,27 @@
+---
+title: Live
+---
+
+<div class="container">
+  <% data.live.each do |l| %>
+    <div class="live-outer">
+      <div class="flex">
+        <div class="date">
+          <h3 class="h3"><%= l.date %></h3>
+          at <%= l.place %>
+        </div>
+        <div>
+          <h3 class="title"><%= l.title %></h3>
+
+          <% if l.img.present? %>
+            <a href="<%= "/images/live/#{l.img}" %>"><img src="<%= "/images/live/#{l.img}"%>" class="image" alt="詳細画像"></a>
+          <% end %>
+
+          <div>
+            <%= l.text %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

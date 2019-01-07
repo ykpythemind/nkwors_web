@@ -2,10 +2,18 @@
 
 猫を堕ろすのwebサイトのソースを管理するレポジトリ
 
+## requirements
+
+* Ruby
+* Node.js
+  * yarn
+
 ## develop 
+
 ```
-yarn
-yarn run dev
+$ bundle
+$ yarn
+$ rake server
 ```
 
 ## host
@@ -23,7 +31,14 @@ export AWS_SECRET_ACCESS_KEY=
 export SLACK_URL=
 ```
 
+to staging
+
 ```
-sh ./deploy.sh
+$ rake deploy
 ```
 
+to production
+
+```
+$ BUILD_ENV=production rake deploy
+```

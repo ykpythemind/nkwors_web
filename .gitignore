@@ -1,13 +1,9 @@
-# Add any directories, files, or patterns you don't want to be tracked by version control
-
+.bundle
+.cache
 .DS_Store
-.ftpconfig
+.sass-cache
+build/
+
+.scripts/dist
 node_modules/
-.nuxt/
-.cache/
-.secret
-dist/
 
-.scripts/dist/
-
-yarn-error.log
