@@ -22,7 +22,8 @@ a {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
 }
 
 .Site {
@@ -142,7 +143,7 @@ footer.index {
     margin-right: 0px;
   }
   .jacket > img {
-    width: 80% !important;
+    width: 70% !important;
   }
 }
 
@@ -184,3 +185,7 @@ footer.index {
 .jacket img {
   width: 100%;
 }
+.jacket2 {
+  flex-basis: 100%;
+}
+
