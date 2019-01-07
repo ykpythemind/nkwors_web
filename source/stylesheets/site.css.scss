@@ -236,7 +236,7 @@ footer.index {
   }
 
   #mobilemenu li:first-child {
-    margin-top: 5rem;
+    margin-top: 1rem;
   }
 
   #mobilemenu li {
@@ -254,11 +254,9 @@ footer.index {
 
 }
 
-
-
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }

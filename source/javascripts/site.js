@@ -3,31 +3,39 @@
 window.onload = function() {
   var $button = document.getElementById("hambutton")
   var $menu = document.getElementById("mobilemenu")
-  var isOpen = false
+  var isOpen = false;
+  var blocking = false;
 
-  var toggle = function(open) {
+  var toggle = function() {
+    if (blocking) {
+      return
+    }
+    blocking = true
     $menu.classList.remove("animated");
 
     // TODO fix
-    if (open) {
+    if (isOpen) {
+      $button.classList.add("is-active")
       $menu.classList.remove("fadeOut");
       $menu.classList.add("menuon");
       $menu.classList.add("animated");
       $menu.classList.add("fadeIn");
+      blocking = false;
     } else {
+      $button.classList.remove("is-active")
       $menu.classList.remove("fadeIn");
       $menu.classList.add("animated");
       $menu.classList.add("fadeOut");
       setTimeout(function() {
         $menu.classList.remove("menuon");
-      }, 1000)
+        blocking = false;
+      }, 500)
     }
   }
 
   $button.addEventListener('click', function() {
     isOpen = !isOpen;
-    $button.classList.toggle("is-active")
 
-    toggle(isOpen);
+    toggle();
   })
 }
