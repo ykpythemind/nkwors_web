@@ -1,6 +1,9 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+activate :sprockets
+sprockets.append_path File.join(root, "node_modules")
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end

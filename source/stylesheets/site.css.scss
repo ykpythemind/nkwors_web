@@ -85,6 +85,7 @@ footer {
   }
   .menu {
     flex-basis: 80%;
+    overflow-x: scroll;
   }
 }
 
@@ -112,39 +113,14 @@ footer.index {
     padding: 0 4px 4px;
     margin-right: 12px;
   }
+}
 
+.ham {
+  display: none;
 }
 
 .flex {
   display: flex;
-}
-
-@media screen and (max-width: 480px) {
-  .flex {
-    flex-wrap: wrap;
-  }
-
-  .menu .menuinner {
-    display: none;
-  }
-
-  footer {
-    height: 80px;
-  }
-
-  footer .logo {
-    flex-basis: 120px;
-    flex-shrink: 0;
-    padding: 0 0.5rem;
-  }
-
-  .jacket {
-    flex: 1;
-    margin-right: 0px;
-  }
-  .jacket > img {
-    width: 70% !important;
-  }
 }
 
 .flex {
@@ -187,5 +163,44 @@ footer.index {
 }
 .jacket2 {
   flex-basis: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-bottom: 80px;
+  }
+
+  .ham {
+    display: block;
+    flex-shrink: 0;
+    flex-basis: 30px;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  .menu .menuinner {
+    display: none;
+  }
+
+  footer {
+    height: 70px;
+  }
+
+  footer .logo {
+    flex-basis: 110px;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+  }
+
+  .jacket {
+    flex: 1;
+    margin-right: 0px;
+  }
+  .jacket > img {
+    width: 70% !important;
+  }
 }
 
