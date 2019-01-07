@@ -15,4 +15,16 @@ task :sync do
   system "bundle exec middleman s3_sync"
 end
 
-task :deploy => [:build, :sync]
+task :notify_git_log do
+  slack_url = ENV['SLACK_URL']
+  exit 'SLACK_URL is not implemented' unless slack_url
+
+  git_log = `git log --date=iso --pretty=format:"[%ad] %h %an : %s" | head -n 3`
+  str = "deploy finished! \n\nheading git log...\n #{git_log.chomp}"
+  `curl -X POST --data-urlencode 'payload={"text": "#{str}"}' #{slack_url}`
+end
+
+deploytask = [:build, :sync]
+deploytask += [:notify_git_log] if ENV['BUILD_ENV'] == 'production'
+
+task :deploy => deploytask
