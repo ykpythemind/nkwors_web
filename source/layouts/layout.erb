@@ -18,7 +18,36 @@
 
       <%= yield %>
     </main>
+
+
     <footer class="<%= page_classes %>">
+
+      <div id="mobilemenu">
+        <ul>
+          <li>
+            <%= link_to "Top", "/" %>
+          </li>
+          <li>
+            <%= link_to "Biography", "bio.html" %>
+          </li>
+          <li>
+            <%= link_to "Discography", "disco.html" %>
+          </li>
+          <li>
+            <%= link_to "Live", "live.html" %>
+          </li>
+          <li>
+            <%= link_to "Video", "video.html" %>
+          </li>
+          <li>
+            <%= link_to "Twitter", "https://twitter.com/nkwors", target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to "Contact", "https://goo.gl/forms/mG7UfVwT9gSy060t2", target: '_blank' %>
+          </li>
+        </ul>
+      </div>
+
       <div class="footer-container">
         <div class="logo">
           <a href="/">
@@ -51,6 +80,8 @@
           </ul>
         </div>
         <div class="ham">
+
+
           <button class="hamburger hamburger--collapse" type="button" id="hambutton">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -59,6 +90,9 @@
         </div>
 
       </div>
+
+
+
 
     </footer>
   </body>
