@@ -7,14 +7,14 @@ title: Live
     <div class="live-outer">
       <div class="flex">
         <div class="date">
-          <h3 class="h3"><%= l.date %></h3>
+          <h3 class="h3"><%= live_date(l.date) %></h3>
           at <%= l.place %>
         </div>
         <div>
           <h3 class="title"><%= l.title %></h3>
 
           <% if l.img.present? %>
-            <a href="<%= "/images/live/#{l.img}" %>"><img src="<%= "/images/live/#{l.img}"%>" class="image" alt="詳細画像"></a>
+            <%= link_to("/images/live/#{l.img}") { image_tag "/images/live/#{l.img}", class: "image" } %>
           <% end %>
 
           <div>

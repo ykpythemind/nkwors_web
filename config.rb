@@ -35,11 +35,13 @@ page '/*.txt', layout: false
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
+helpers do
+  def live_date(str)
+    date = Date.parse(str)
+    week = date.strftime("%a").downcase
+    date.strftime("%Y/%-m/%-d") + "(#{week})"
+  end
+end
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
