@@ -1,6 +1,7 @@
 {
   "scripts": {},
   "dependencies": {
+    "body-scroll-lock": "^2.6.1",
     "hamburgers": "^1.1.3"
   }
 }
