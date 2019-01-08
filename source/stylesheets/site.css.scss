@@ -177,9 +177,18 @@ footer.index {
   display: block !important;
 }
 
+$mobile_footer_height: 70px;
+
 @media screen and (max-width: 480px) {
+
   body {
     padding-bottom: 80px;
+  }
+
+  .live-outer {
+    .image {
+      width: 80%;
+    }
   }
 
   .ham {
@@ -197,7 +206,7 @@ footer.index {
   }
 
   footer {
-    height: 70px;
+    height: $mobile_footer_height;
   }
 
   footer .logo {
@@ -219,24 +228,28 @@ footer.index {
     top: 0;
     left: 0;
     width: 100vw;
-    // height: calc(100vh - 70px);
-    height: 100vh;
+    height: calc(100vh - #{$mobile_footer_height});
+    // height: 100vh;
     background: #fff;
     margin: 0 auto;
   }
   #mobilemenu ul {
     padding: 0;
+    margin: 0;
     list-style-type: none;
     display: none;
     display: flex;
-    height: 80%;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
 
   #mobilemenu li:first-child {
-    margin-top: 1rem;
+    margin-top: 2rem;
+  }
+  #mobilemenu li:last-child {
+    margin-bottom: 2rem;
   }
 
   #mobilemenu li {
