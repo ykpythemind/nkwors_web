@@ -11,7 +11,11 @@ title: Live
     <div class="live-outer">
       <div class="flex">
         <div class="date">
-          <h3 class="h3"><%= live_date(l.date) %></h3>
+          <h3 class="h3" id="<%= l.date %>">
+            <a href="#<%= l.date %>">
+              <%= live_date(l.date) %>
+            </a>
+          </h3>
           at <%= l.place %>
         </div>
         <div>

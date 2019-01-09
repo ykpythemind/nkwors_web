@@ -2,7 +2,7 @@ $footer_height: 100px;
 
 body {
   background-color: #fff;
-  color: #222;
+  color: #111;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
@@ -138,6 +138,11 @@ footer.index {
 .h3 {
   margin-top: 0px;
   border-bottom: 1px solid #ddd;
+}
+
+h3 a {
+  color: #111;
+  text-decoration: none;
 }
 
 .live-outer {
