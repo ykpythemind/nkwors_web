@@ -41,6 +41,10 @@ helpers do
     week = date.strftime("%a").downcase
     date.strftime("%Y/%-m/%-d") + "(#{week})"
   end
+
+  def contact_url
+    "https://goo.gl/forms/mG7UfVwT9gSy060t2"
+  end
 end
 
 # Build-specific configuration
@@ -95,9 +99,13 @@ before_build do
   puts "production mode / deploy bucket: #{bucket}" if production
 end
 
+require 'fileutils'
+
 after_build do
-  status = system "sh after_build.sh"
-  if !status
-    abort "after build hook failed!"
-  end
+  require 'fileutils'
+
+  # 管理外のフォルダをコピー
+  FileUtils.cp_r 'synapse', 'build'
+  FileUtils.cp_r 'sound-recruiting', 'build'
+  FileUtils.cp 'favicon.ico', 'build'
 end
