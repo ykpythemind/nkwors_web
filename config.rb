@@ -45,6 +45,14 @@ helpers do
   def contact_url
     "https://goo.gl/forms/mG7UfVwT9gSy060t2"
   end
+
+  def twitter_link(id)
+    s = ""
+    s << %(<a href="https://twitter.com/#{id}" target="_blank">)
+    s << image_tag("/images/twitter.svg", style: "width: 16px; vertical-align: bottom;")
+    s << %(</a>)
+    s
+  end
 end
 
 # Build-specific configuration
