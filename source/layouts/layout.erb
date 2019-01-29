@@ -13,7 +13,11 @@
   <body class="Site <%= page_classes %>">
     <main class="Site-content">
       <% if current_page.data.title.present? %>
-        <h2><%= current_page.data.title %></h2>
+        <div class="container">
+          <center>
+            <h2><%= current_page.data.title %></h2>
+          </center>
+        </div>
       <% end %>
 
       <%= yield %>
