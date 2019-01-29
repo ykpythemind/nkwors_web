@@ -26,6 +26,10 @@ body {
   visibility:hidden;
 }
 
+.muted {
+  color: #ddd;
+}
+
 a, a:hover, a:visited, a:focus {
   color: #0d3bd1;
 }
