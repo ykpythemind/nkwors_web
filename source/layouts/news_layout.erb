@@ -1,0 +1,13 @@
+<% wrap_layout :layout do %>
+
+  <div class="container">
+    <article>
+      <div style="text-align: right;">
+        <%= strftime(current_article.date) %>
+      </div>
+      <br>
+      <%= yield %>
+    </article>
+  </div>
+
+<% end %>

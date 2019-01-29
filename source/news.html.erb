@@ -1,0 +1,25 @@
+---
+title: News
+---
+
+<div class="container">
+  <% articles = blog.articles[0...5] %>
+  <% articles.each_with_index do |article, i| %>
+    <article style="margin-top: 10px;">
+      <div style="display: flex;">
+        <h3>
+          <time><%= strftime(article.date) %></time>
+          <a href="<%= article.url %>"><%= article.title %></a>
+        </h3>
+        <div style="margin-left: auto;">
+          <%= link_link(article.url) %>
+        </div>
+      </div>
+
+      <%= article.body %>
+    </article>
+    <% if i != articles.count - 1 %>
+      <center>◆◆◆</center>
+    <% end %>
+  <% end %>
+</div>

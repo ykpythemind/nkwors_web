@@ -16,6 +16,18 @@ body {
   padding-bottom: $footer_height + 40px;
 }
 
+.top-info {
+  color: #fff;
+  bottom: 120px;
+  position: absolute;
+  right: 0px;
+  padding-right: 15px;
+}
+
+.muted {
+  color: #ddd;
+}
+
 a {
   color: rgba(#000, 0.7);
 
@@ -38,6 +50,10 @@ h2 {
 
 .Site-content {
   flex: 1;
+}
+
+.top-info a, .top-info a:hover, .top-info a:visited {
+  color: #fff;
 }
 
 body.index {
@@ -117,6 +133,10 @@ footer.index {
     padding: 0 4px 4px;
     margin-right: 12px;
   }
+
+  .menuinner li a{
+    text-decoration: none;
+  }
 }
 
 #mobilemenu {
@@ -163,6 +183,9 @@ h3 a, h3 a:hover, h3 a:visited {
   }
 }
 
+.active-link {
+  text-decoration: underline !important;
+}
 
 .jacket {
   flex-basis: 200px;
@@ -192,6 +215,10 @@ $mobile_footer_height: 70px;
 
   body {
     padding-bottom: $mobile_footer_height + 10px;
+  }
+
+  .top-info {
+    display: none;
   }
 
   .live-outer {
@@ -270,6 +297,10 @@ $mobile_footer_height: 70px;
     letter-spacing: 2.04px;
     padding: 0 4px 4px;
   }
+
+  // #mobilemenu li a{
+  //   text-decoration: bottom;
+  // }
 }
 
 .animated {

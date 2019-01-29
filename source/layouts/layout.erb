@@ -19,6 +19,9 @@
       <%= yield %>
     </main>
 
+    <% if content_for?(:top_info) %>
+      <%= yield_content :top_info %>
+    <% end %>
 
     <footer class="<%= page_classes %>">
 

@@ -1,21 +1,24 @@
 <li>
-  <%= link_to "Top", "/" %>
+  <%= link_to_if "Top", "/" %>
 </li>
 <li>
-  <%= link_to "Biography", "bio.html" %>
+  <%= link_to_if "News", "/news.html" %>
 </li>
 <li>
-  <%= link_to "Discography", "disco.html" %>
+  <%= link_to_if "Biography", "/bio.html" %>
 </li>
 <li>
-  <%= link_to "Live", "live.html" %>
+  <%= link_to_if "Discography", "/disco.html" %>
 </li>
 <li>
-  <%= link_to "Video", "video.html" %>
+  <%= link_to_if "Live", "/live.html" %>
 </li>
 <li>
-  <%= link_to "Twitter", "https://twitter.com/nkwors", target: '_blank' %>
+  <%= link_to_if "Video", "/video.html" %>
 </li>
 <li>
-  <%= link_to "Contact", contact_url, target: '_blank' %>
+  <%= link_to_if "Twitter", "https://twitter.com/nkwors", target: '_blank' %>
+</li>
+<li>
+  <%= link_to_if "Contact", contact_url, target: '_blank' %>
 </li>
