@@ -1,1 +1,13 @@
-<div class="dummy"></div>
+<div class="dummy">
+</div>
+
+<% content_for :top_info do %>
+  <div class="top-info">
+  <%# 試しに1つ %>
+  <% blog.articles.take(1).each do |article| %>
+      <%= "【" + strftime(article.date) + "】 " %>
+      <%= link_to article.title, "/news.html" %>
+      <br>
+  <% end %>
+  </div>
+<% end %>

@@ -70,6 +70,22 @@ helpers do
     s << %(<img style="padding-top: 5px; width: 20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACwSURBVEhL7ZJNCsIwEEZzDT2SP7WXEd0KLjyU1DtJN670e6HR9iOCRboo5MFbzExm6iSGQmF+1PImW/k0Ha/TQ28ls1ykN/V1cmeSZzlgJyk85F4u5VjoOUhmMGsr37AayWOM/oMZzGpi1JHufBGjD+R+sQ+bkLvHqGPyD7AOycmuiAchyQNxgF8xFnroTY+8lgP4a1H4ppM7kzzJLBvJatyfNzlep+cqV7JQmA8hvAAerGYlT/uC3QAAAABJRU5ErkJggg==">)
     s << %(</a>)
   end
+
+  def link_to_if(msg, url, **opt)
+    op = proc { |opt| opt.merge!(class: "active-link") }
+
+    # p current_page.path
+
+    if current_page.path == url.delete_prefix("/")
+      op.call opt
+    elsif url == "/" && current_page.path == "index.html"
+      op.call opt
+    elsif url == "/news.html" && current_page.path.include?("news")
+      op.call opt
+    end
+
+    link_to msg, url, **opt
+  end
 end
 
 # Build-specific configuration
