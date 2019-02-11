@@ -127,7 +127,11 @@ configure :build do
 end
 
 before_build do
+  require 'fileutils'
   puts "production mode / deploy bucket: #{bucket}" if production
+
+  puts "cleanup"
+  FileUtils.rm_r "build"
 end
 
 after_build do
