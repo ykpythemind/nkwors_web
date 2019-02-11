@@ -1,16 +1,7 @@
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :sprockets
-sprockets.append_path File.join(root, "node_modules")
-
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 activate :directory_indexes
-
-# Layouts
-# https://middlemanapp.com/basics/layouts/
 
 # Per-page layout changes
 page '/*.xml', layout: false
@@ -36,10 +27,6 @@ activate :blog do |blog|
   blog.permalink = "{year}-{month}-{day}-{title}.html"
   blog.layout = "news_layout"
 end
-
-# Helpers
-# Methods defined in the helpers block are available in templates
-# https://middlemanapp.com/basics/helper-methods/
 
 helpers do
   def live_date(str)
@@ -88,9 +75,6 @@ helpers do
   end
 end
 
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
 production = ENV['BUILD_ENV'] == 'production'
 
 bucket = production ? 'nkwors.com' : 'nkwors-staging'
@@ -127,6 +111,12 @@ end
 default_caching_policy      max_age: (60 * 60 * 24 * 365)
 caching_policy 'text/html', max_age: 0, must_revalidate: true
 
+activate :external_pipeline, {
+  name:    :parcel,
+  command: build? ? 'yarn build' : 'yarn dev',
+  source:  'tmp/dist'
+}
+
 configure :build do
   activate :minify_css
   activate :minify_javascript
@@ -139,8 +129,6 @@ end
 before_build do
   puts "production mode / deploy bucket: #{bucket}" if production
 end
-
-require 'fileutils'
 
 after_build do
   require 'fileutils'

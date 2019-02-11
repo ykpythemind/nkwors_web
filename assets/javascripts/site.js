@@ -1,4 +1,5 @@
-//= require body-scroll-lock/lib/bodyScrollLock.js
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import backgroundImageUrl from "../images/na.jpg";
 
 window.onload = function() {
   var $button = document.getElementById("hambutton")
@@ -17,7 +18,7 @@ window.onload = function() {
 
     // TODO fix
     if (isOpen) {
-      bodyScrollLock.disableBodyScroll($menu);
+      disableBodyScroll($menu);
 
       $button.classList.add("is-active")
       $menu.classList.remove("fadeOut");
@@ -26,7 +27,7 @@ window.onload = function() {
       $menu.classList.add("fadeIn");
       blocking = false;
     } else {
-      bodyScrollLock.enableBodyScroll($menu);
+      enableBodyScroll($menu);
 
       $button.classList.remove("is-active")
       $menu.classList.remove("fadeIn");
@@ -44,4 +45,8 @@ window.onload = function() {
 
     toggle();
   })
+
+  if (document.body.classList.contains("index")) {
+    document.body.style.backgroundImage = 'url(' + backgroundImageUrl + ')';
+  }
 }

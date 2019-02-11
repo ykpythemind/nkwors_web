@@ -1,7 +1,15 @@
 {
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel watch --out-dir tmp/dist assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss",
+    "build": "parcel build --no-source-maps --out-dir tmp/dist assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss"
+  },
   "dependencies": {
     "body-scroll-lock": "^2.6.1",
-    "hamburgers": "^1.1.3"
+    "hamburgers": "^1.1.3",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.11.0"
+  },
+  "devDependencies": {
+    "sass": "^1.17.0"
   }
 }

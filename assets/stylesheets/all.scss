@@ -1,6 +1,6 @@
-@import 'normalize.css';
+@import '../../node_modules/normalize.css/normalize';
 $hamburger-layer-width         : 30px;
-@import 'hamburgers/_sass/hamburgers/hamburgers.scss';
+@import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 
 $footer_height: 100px;
 
@@ -60,7 +60,8 @@ h2 {
 body.index {
   padding-bottom: 0px;
 
-  background-image: url("../images/na.jpg");
+  // parcelでurlを参照できないので、js側で設定する
+  // background-image: url(../images/na.jpg);
 
   background-position: center;
   background-repeat: no-repeat;
