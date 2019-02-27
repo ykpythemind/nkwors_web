@@ -1,0 +1,44 @@
+@import '../../node_modules/normalize.css/normalize';
+
+
+body {
+  background-color: #000;
+
+  color: #fff;
+
+  // background-image: url(../images/anatanitotte_jacket_big.jpg);
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  background-size: cover;
+
+  height: 100vh;
+}
+
+a {
+  color: rgba(#fff, 0.6);
+
+  &:focus,
+  &:hover {
+    color: rgba(#fff, 0.9);
+  }
+}
+
+main {
+  width: 90%;
+  max-width: 670px;
+
+  margin: 2rem auto;
+}
+
+.sub {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  margin: 5rem
+}
