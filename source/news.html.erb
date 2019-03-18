@@ -5,7 +5,7 @@ title: News
 <div class="container">
   <% articles = blog.articles[0...5] %>
   <% articles.each_with_index do |article, i| %>
-    <article style="margin-top: 10px;">
+    <article style="margin: 2rem 0 2rem;">
       <div style="display: flex;">
         <h3>
           <time><%= strftime(article.date) %></time>
