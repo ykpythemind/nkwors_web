@@ -28,6 +28,7 @@ activate :blog do |blog|
   blog.prefix = "news"
   blog.permalink = "{year}-{month}-{day}-{title}.html"
   blog.layout = "news_layout"
+  blog.publish_future_dated = true
 end
 
 helpers do
@@ -132,8 +133,8 @@ before_build do
   require 'fileutils'
   puts "production mode / deploy bucket: #{bucket}" if production
 
-  # puts "cleanup"
-  # FileUtils.rm_r "build"
+  puts "cleanup"
+  FileUtils.rm_r "build"
 end
 
 after_build do
