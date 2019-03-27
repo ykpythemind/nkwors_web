@@ -7,7 +7,9 @@ title: Live
   <%= link_to "Contact", contact_url, target: '_blank' %> まで！
   <br><br></p>
 
-  <% data.live.each do |l| %>
+  <% data.live.take(7).each do |l| %>
     <%= partial "live", locals: { live: l } %>
   <% end %>
+
+  <%= link_to "過去のライブ", "/old_live.html" %>
 </div>

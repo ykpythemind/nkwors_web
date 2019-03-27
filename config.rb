@@ -68,6 +68,8 @@ helpers do
 
     if current_page.path == url.delete_prefix("/")
       op.call opt
+    elsif url == "/old_live.html"
+      op.call opt
     elsif url == "/" && current_page.path == "index.html"
       op.call opt
     elsif url == "/news.html" && current_page.path.include?("news")
