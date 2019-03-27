@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: rgba(#fff, 0.6);
+  color: rgba(#fff, 0.95);
 
   &:focus,
   &:hover {
@@ -40,5 +40,5 @@ main {
   bottom: 0;
   right: 0;
 
-  margin: 5rem
+  margin: 2rem;
 }
