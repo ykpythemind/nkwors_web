@@ -8,28 +8,6 @@ title: Live
   <br><br></p>
 
   <% data.live.each do |l| %>
-    <div class="live-outer">
-      <div class="flex">
-        <div class="date">
-          <h3 class="h3" id="<%= l.date %>">
-            <a href="#<%= l.date %>">
-              <%= live_date(l.date) %>
-            </a>
-          </h3>
-          at <%= l.place %>
-        </div>
-        <div>
-          <h3 class="title"><%= l.title %></h3>
-
-          <% if l.img.present? %>
-            <%= link_to("/images/live/#{l.img}") { image_tag "/images/live/#{l.img}", class: "image" } %>
-          <% end %>
-
-          <div>
-            <%= l.text %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= partial "live", locals: { live: l } %>
   <% end %>
 </div>
