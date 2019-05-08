@@ -84,17 +84,6 @@ production = ENV['BUILD_ENV'] == 'production'
 
 bucket = production ? 'nkwors.com' : 'nkwors-staging'
 
-# dirty hack
-Middleman::S3SyncExtension.class_eval do
-  def manipulate_resource_list(mm_resources)
-    dirs = Dir.glob(["synapse/*", "sound-recruiting/*"])
-    ::Middleman::S3Sync.mm_resources = mm_resources + dirs.map do |t|
-      Middleman::Sitemap::Resource.new(app.sitemap, t.gsub(/^build\//,""), File.join(app.root, t))
-    end
-  end
-end
-# ----------
-
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = bucket # The name of the S3 bucket you are targeting. This is globally unique.
   s3_sync.region                     = 'ap-northeast-1'     # The AWS region for your bucket.
@@ -143,7 +132,5 @@ after_build do
   require 'fileutils'
 
   # 管理外のフォルダをコピー
-  FileUtils.cp_r 'synapse', 'build'
-  FileUtils.cp_r 'sound-recruiting', 'build'
   FileUtils.cp 'favicon.ico', 'build'
 end
