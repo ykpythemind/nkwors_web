@@ -9,6 +9,7 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 page '/anatanitotte/*.html', :layout => "anata_layout"
+page '/sound-recruiting/*.html', :layout => "sr_layout"
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
