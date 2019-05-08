@@ -1,7 +1,0 @@
-
-task default: %w[export]
-
-task :export do
-  ruby "remix.rb"
-end
-
