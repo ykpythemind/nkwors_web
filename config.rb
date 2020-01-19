@@ -81,31 +81,6 @@ helpers do
   end
 end
 
-production = ENV['BUILD_ENV'] == 'production'
-
-bucket = production ? 'nkwors.com' : 'nkwors-staging'
-
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = bucket # The name of the S3 bucket you are targeting. This is globally unique.
-  s3_sync.region                     = 'ap-northeast-1'     # The AWS region for your bucket.
-  s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
-  s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
-  s3_sync.delete                     = true # We delete stray files by default.
-  s3_sync.after_build                = false # We do not chain after the build step by default.
-  s3_sync.prefer_gzip                = true
-  s3_sync.path_style                 = true
-  s3_sync.reduced_redundancy_storage = false
-  s3_sync.acl                        = 'public-read'
-  s3_sync.encryption                 = false
-  s3_sync.prefix                     = ''
-  s3_sync.version_bucket             = false
-  s3_sync.index_document             = 'index.html'
-  s3_sync.error_document             = '404/index.html'
-end
-
-default_caching_policy      max_age: (60 * 60 * 24 * 365)
-caching_policy 'text/html', max_age: 0, must_revalidate: true
-
 activate :external_pipeline, {
   name:    :parcel,
   command: build? ? 'yarn build' : 'yarn dev',
@@ -117,14 +92,10 @@ configure :build do
   activate :minify_javascript
 
   activate :asset_hash
-
-  # activate :asset_host, :host => '//YOURDOMAIN.cloudfront.net'
 end
 
 before_build do
   require 'fileutils'
-  puts "production mode / deploy bucket: #{bucket}" if production
-
   puts "cleanup"
   FileUtils.rm_r "build"
 end
