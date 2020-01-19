@@ -97,7 +97,7 @@ end
 before_build do
   require 'fileutils'
   puts "cleanup"
-  FileUtils.rm_r "build"
+  FileUtils.rm_r "build" if File.exist?("build")
 end
 
 after_build do
