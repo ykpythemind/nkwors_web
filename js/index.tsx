@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "development") {
 
 import { h, render } from "preact";
 import { Hello } from "./components/app";
-import "./style/index.css";
+import "./style/index.scss";
 
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import backgroundImageUrl from "./assets/na.jpg";
