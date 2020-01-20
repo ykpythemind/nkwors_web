@@ -8,5 +8,5 @@ task :preview do
 end
 
 task :build do
-  system "bundle exec middleman build"
+  system "bundle exec middleman build --verbose"
 end
