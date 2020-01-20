@@ -69,5 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    render(<Hello />, document.getElementById("root") as Element);
+    const bio = document.getElementById("bio-container");
+    if (bio) {
+        render(<Hello />, bio);
+    }
 });
