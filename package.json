@@ -1,8 +1,7 @@
 {
   "scripts": {
-    "dev": "npm run parcel:dev",
-    "parcel:dev": "parcel watch --out-dir tmp/dist js/index.tsx assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss",
-    "parcel:build": "parcel build --no-source-maps --out-dir tmp/dist assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss",
+    "dev": "parcel watch --out-dir tmp/dist js/index.tsx assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss",
+    "build": "parcel build --no-source-maps --out-dir tmp/dist js/index.tsx assets/images/**/* assets/javascripts/*.js assets/stylesheets/*.scss",
     "precommit": "lint-staged"
   },
   "lint-staged": {
