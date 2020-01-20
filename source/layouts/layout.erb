@@ -7,55 +7,58 @@
     <meta name="description" content="シニカルポップバンド・猫を堕ろすの公式サイト">
     <title><%= current_page.data.title.present? ? "#{current_page.data.title} | 猫を堕ろすWeb" : "猫を堕ろすWeb" %></title>
     <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag "site" %>
+    <%= javascript_include_tag "js/index" %>
+
   </head>
   <body class="Site <%= page_classes %>">
-    <main class="Site-content">
-      <% if current_page.data.title.present? %>
-        <div class="container">
-          <center>
-            <h2><%= current_page.data.title %></h2>
-          </center>
-        </div>
+    <div id="root">
+      <main class="Site-content">
+        <% if current_page.data.title.present? %>
+          <div class="container">
+            <center>
+              <h2><%= current_page.data.title %></h2>
+            </center>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </main>
+
+      <% if content_for?(:top_info) %>
+        <%= yield_content :top_info %>
       <% end %>
 
-      <%= yield %>
-    </main>
+      <footer class="<%= page_classes %>">
 
-    <% if content_for?(:top_info) %>
-      <%= yield_content :top_info %>
-    <% end %>
-
-    <footer class="<%= page_classes %>">
-
-      <div id="mobilemenu">
-        <ul>
-          <%= partial "menu" %>
-        </ul>
-      </div>
-
-      <div class="footer-container">
-        <div class="logo">
-          <a href="/">
-            <img src="/images/nkwors_black.png" alt="猫を堕ろす">
-          </a>
-        </div>
-        <div class="menu">
-          <ul class="menuinner">
+        <div id="mobilemenu">
+          <ul>
             <%= partial "menu" %>
           </ul>
         </div>
 
-        <div class="ham">
-          <button class="hamburger hamburger--collapse" type="button" id="hambutton">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
-        </div>
+        <div class="footer-container">
+          <div class="logo">
+            <a href="/">
+              <img src="/images/nkwors_black.png" alt="猫を堕ろす">
+            </a>
+          </div>
+          <div class="menu">
+            <ul class="menuinner">
+              <%= partial "menu" %>
+            </ul>
+          </div>
 
-      </div>
-    </footer>
+          <div class="ham">
+            <button class="hamburger hamburger--collapse" type="button" id="hambutton">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+
+        </div>
+      </footer>
+    </div>
 
     <noscript>JavaScriptを有効にして下さい</noscript>
     <script>
