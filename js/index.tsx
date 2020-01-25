@@ -10,6 +10,7 @@ import { h, render } from "preact";
 import { Hello } from "./components/app";
 import "./style/index.scss";
 
+import axios from "axios";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import backgroundImageUrl from "./assets/na.jpg";
 
@@ -69,6 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    axios
+        .get(
+            "https://script.google.com/macros/s/AKfycbyIrgCBGL87Rk3hAuGQdtPZXhYxgvsj1_N9xA2YIrqHMcYXF5w/exec"
+        )
+        .then(res => console.log(res));
+
     const bio = document.getElementById("bio-container");
     if (bio) {
         render(<Hello />, bio);
