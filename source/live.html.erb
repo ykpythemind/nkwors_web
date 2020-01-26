@@ -7,6 +7,9 @@ title: Live
   <%= link_to "Contact", contact_url, target: '_blank' %> まで！
   <br><br></p>
 
+  <div id="live-container">
+  </div>
+
   <% data.live.take(7).each do |l| %>
     <%= partial "live", locals: { live: l } %>
   <% end %>
