@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component, h, render } from "preact";
 import Live from "../entities/live";
 import { LiveListInner } from "./LiveListInner";
+import { Loading } from "./Loading";
 
 interface LiveListState {
     lives: Live[];
@@ -14,7 +15,7 @@ const initialState: LiveListState = {
 };
 
 const APIEndpoint =
-    "https://l2hq0wx4n7.execute-api.ap-northeast-1.amazonaws.com/default/nkwors-api-first";
+    "https://2cp3p08a6l.execute-api.ap-northeast-1.amazonaws.com/Prod/list";
 
 const fetch: () => Promise<Live[]> = async () => {
     const res = await axios.get<Live[]>(APIEndpoint);
@@ -35,11 +36,13 @@ export default class LiveList extends Component<{}, LiveListState> {
     public render({}, state: LiveListState) {
         return (
             <div>
-                {state.loading
-                    ? "Loading..."
-                    : state.lives.map(l => (
-                          <LiveListInner live={l} key={l.id} />
-                      ))}
+                {state.loading ? (
+                    <div style="text-align: center;">
+                        <Loading />
+                    </div>
+                ) : (
+                    state.lives.map(l => <LiveListInner live={l} key={l.id} />)
+                )}
             </div>
         );
     }

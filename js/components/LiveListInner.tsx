@@ -12,7 +12,6 @@ function parseLiveDate(str: string): string {
 
 export const LiveListInner: FunctionalComponent<Props> = ({ live }) => {
     const date = parseLiveDate(live.date);
-    console.log(live);
 
     return (
         <div class="live-outer">
@@ -27,7 +26,7 @@ export const LiveListInner: FunctionalComponent<Props> = ({ live }) => {
                     <h3 class="title">{live.title} </h3>
 
                     {live.img_url !== "" ? (
-                        <a href={live.img_url}>
+                        <a href={live.img_url} target="_blank">
                             <img src={live.img_url} class="image" />
                         </a>
                     ) : null}

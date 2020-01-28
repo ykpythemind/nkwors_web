@@ -10,9 +10,5 @@ title: Live
   <div id="live-container">
   </div>
 
-  <% data.live.take(7).each do |l| %>
-    <%= partial "live", locals: { live: l } %>
-  <% end %>
-
-  <%= link_to "過去のライブ", "/old_live.html" %>
+  <%-# link_to "過去のライブ", "/old_live.html" %>
 </div>
