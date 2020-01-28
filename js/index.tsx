@@ -5,13 +5,14 @@ if (process.env.NODE_ENV === "development") {
     // tslint:disable-next-line:no-var-requires
     require("preact/debug");
 }
+import "babel-polyfill";
 
 import { h, render } from "preact";
-import { Hello } from "./components/app";
 import "./style/index.scss";
 
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import backgroundImageUrl from "./assets/na.jpg";
+import LiveList from "./components/LiveList";
 
 document.addEventListener("DOMContentLoaded", () => {
     const $button = document.getElementById("hambutton");
@@ -69,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const bio = document.getElementById("bio-container");
+    const bio = document.getElementById("live-container");
     if (bio) {
-        render(<Hello />, bio);
+        render(<LiveList />, bio);
     }
 });
