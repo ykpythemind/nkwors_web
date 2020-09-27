@@ -42,6 +42,13 @@ export const LiveListInner: FunctionalComponent<Props> = ({ live }) => {
                             __html: live.body
                         }}
                     />
+                    {live.html && (
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: live.html
+                            }}
+                        />
+                    )}
                 </div>
             </div>
         </div>

@@ -6,4 +6,5 @@ export default interface Live {
     date: string;
     img?: any;
     place: string;
+    html?: string;
 }

@@ -5,6 +5,7 @@ import { LiveListInner } from "./LiveListInner";
 import { Loading } from "./Loading";
 
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { createClient } from "contentful";
 
 interface LiveListState {
@@ -45,7 +46,8 @@ export default class LiveList extends Component<{}, LiveListState> {
                 body: documentToHtmlString(item.fields.body),
                 date: item.fields.date,
                 place: item.fields.place,
-                img_url: item.fields.img_url
+                img_url: item.fields.img_url,
+                html: item.fields.html
             };
 
             return l;
