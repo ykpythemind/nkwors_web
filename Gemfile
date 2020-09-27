@@ -9,4 +9,4 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 gem "middleman-blog", "~> 4.0"
 
-gem "rack", "2.0.8" # https://github.com/middleman/middleman/issues/2309
+gem "rack", "2.1.4" # https://github.com/middleman/middleman/issues/2309
