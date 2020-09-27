@@ -39,7 +39,7 @@ export const LiveListInner: FunctionalComponent<Props> = ({ live }) => {
                     ) : null}
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: live.body
+                            __html: nl2br(live.body)
                         }}
                     />
                     {live.html && (
@@ -54,3 +54,7 @@ export const LiveListInner: FunctionalComponent<Props> = ({ live }) => {
         </div>
     );
 };
+
+function nl2br(text: string): string {
+    return text.replace(/\n/g, "<br>");
+}
