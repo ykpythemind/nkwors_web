@@ -13,7 +13,7 @@
 ```
 $ bundle
 $ yarn
-$ rake server
+$ rake preview
 ```
 
 ## deploy
