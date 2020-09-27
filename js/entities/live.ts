@@ -1,8 +1,9 @@
 export default interface Live {
-    id: number;
+    id: string;
     title: string;
-    body: string;
+    body: any;
+    img_url?: string;
     date: string;
-    img_url: string;
+    img?: any;
     place: string;
 }
