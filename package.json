@@ -48,7 +48,7 @@
     "@babel/polyfill": "^7.8.3",
     "@contentful/rich-text-html-renderer": "^14.1.1",
     "@types/body-scroll-lock": "^2.6.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "body-scroll-lock": "^2.6.1",
     "bootstrap": "4.3.1",
